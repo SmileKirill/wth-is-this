@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Jacket — реплики</title>
+<title>Jacket — voice lines (Copy)</title>
 <style>
   :root{
     --bg:#0d0d0d; --panel:#161616; --panel2:#1e1e1e;
@@ -143,861 +143,634 @@
 <script>
 /* ---------- DATA (merged by theme, source-agnostic) ---------- */
 const GROUPS = [
-  {
-    cat: "Маскировка / начало дела",
-    lines: [
-      "Please be advised, the following presentation is not intended for minors.",
-      "The following presentation has been approved for mature audiences only.",
-      "Now enjoy the show.",
-      "Allons-y.",
-      "We hope you have a pleasant flight!",
-      "And now, our feature presentation.",
-      "Time to work out a sweat!",
-      "The hunt is on.",
-      "For I am a harbinger of righteous violence!",
-      "The following content contains scenes of graphic violence. Viewer discretion is advised.",
-      "Just another day, throw your cares awa...."
-    ]
-  },
-  {
-    cat: "Стелс: камеры, охрана, дроны",
-    sub: [
-      {
-        name: "Камера",
-        lines: [
-          "A camera.",
-          "Security cameras.",
-          "Stay clear.",
-          "All seeing, all knowing!!",
-          "Filmed in...3D.",
-          "Camara.",
-          "You're being recorded for quality assurance."
-        ]
-      },
-      {
-        name: "Охранник",
-        lines: [
-          "Guard.",
-          "Security guard.",
-          "The guard approaches.",
-          "We must beware of ____",
-          "Senses trouble.",
-          "Evil is lurking.",
-          "Authority figure."
-        ]
-      },
-      {
-        name: "Мирный житель (стелс-заметка)",
-        lines: [
-          "Simple-minded sheep!",
-          "Average, everyday Americans.",
-          "Humans are the ____",
-          "Civilian."
-        ]
-      },
-      {
-        name: "Дрон",
-        lines: [
-          "...threat from above.",
-          "A killing machine.",
-          "The humming bird is the only bird that can truly hover.",
-          "Please: Respect my privacy.",
-          "It makes a low droning sound to attract its mate."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Пейджер",
-    lines: [
-      "You have reached Dennaton Enterprises, we can't take your call at the moment. Please leave a message after the beep and we'll get back to you.",
-      "This is GenSec tech support. If you have a problem with your radio, please contact us during normal business hours. Thank you.",
-      "This is a test broadcast of the emergency air waves. This is a test, do not be alarmed, this is a test.",
-      "We are experiencing technical issues. There is no cause for alarm. Please be at ease.",
-      "Hello officer, how are you? Hola Officer, como estas?...good, thank you for asking.",
-      "The supreme one hears your call, and through me, he has answered! Tell me your deepest fears!",
-      "Do not be afraid, child. I will shine a light in the darkness. And all will be well.",
-      "What is it you seek? Answers? Meaning in a meaningless world? Well child, you've come to the right place. I have every answer to every question!",
-      "The government LIES to you! There IS no danger! Our practices are COMPLETELY safe!",
-      "The danger has passed, and the pack can rest easy. They are safe...for now.",
-      "As a result of human activity, there are very few predators left in this area.",
-      "According to Abraham Maslow, the most basic needs for human beings are food, water, sleep, and sex.",
-      "They thought they were safe. They thought they had nothing to fear. They were right.",
-      "A masked killer on the loose, a young woman fighting for her life, a city plunged into chaos. Come see: 'Midnight Animal'. Now playing.",
-      "Coming soon. Nothing.",
-      "There is nothing to worry about. We are completely in control. Our opponents cannot touch us!",
-      "You're doing great work! I'm proud of you! Why don't we take a 15 minute cooldown!",
-      "Just inhale nice...and slow. It is important to stay relaxed.",
-      "High blood pressure kills more Americans every year than armed robbery! With these techniques, you can relax your mind and disarm opponents. Kill two birds with one stone!",
-      "Caution: Wet floor. Please proceed with extreme vigilance.",
-      "For your own safety, please remain seated until the vehicle has come to a complete stop.",
-      "The customer service desk is now closed. Have a nice evening."
-    ]
-  },
-  {
-    cat: "Волна ассолта",
-    lines: [
-      "Oh, how nice to get some company.",
-      "It's getting hot.",
-      "The guests are coming any minute.",
-      "We're expecting visitors.",
-      "The anticipation is half the fun.",
-      "IS FUCKING GENOCIDAL!*scrub*"
-    ]
-  },
-  {
-    cat: "Спецюниты",
-    sub: [
-      {
-        name: "Bulldozer",
-        lines: [
-          "Bulldozer.",
-          "Construction vehicle on site.",
-          "The bull charges.",
-          "...an unstoppable force.",
-          "Look at those muscles!"
-        ]
-      },
-      {
-        name: "Bulldozer — убит",
-        lines: [
-          "Bulldozer disabled.",
-          "Bulldozer no longer in working order.",
-          "Bulldozer down.",
-          "Bulldozer...*scrub*...is out of service.",
-          "The beast has fallen.",
-          "We are stronger than the STRONGEST foe!!!",
-          "Nice work, big guy!"
-        ]
-      },
-      {
-        name: "Cloaker",
-        lines: [
-          "Cloaker.",
-          "A long, flowing over-garment.",
-          "*scrub* Cloap *scrub* ker.",
-          "Ninja assassins.",
-          "Get ready to kick!"
-        ]
-      },
-      {
-        name: "Cloaker — убит",
-        lines: [
-          "Cloaker non-operational.",
-          "Cloaker message received.",
-          "Cloaker down.",
-          "Cloaker...*scrub*...is out of service.",
-          "*scrub* most people hate leg day!",
-          "BEGONE, DEMON! BEGONE!!",
-          "The veil is lifted."
-        ]
-      },
-      {
-        name: "Nader (газ)",
-        lines: [
-          "Nader.",
-          "Chemical weapons.",
-          "Avert your eyes.",
-          "The reaction is highly combustible.",
-          "I weep for them!"
-        ]
-      },
-      {
-        name: "Nader — убит",
-        lines: [
-          "Nader down.",
-          "Nader do...*scrub*...is out of service.",
-          "*scrub*...a blast from the past.",
-          "____, and the smoke is cleared away.",
-          "Smoking kills!"
-        ]
-      },
-      {
-        name: "Shield",
-        lines: [
-          "Shield.",
-          "Please use protection.",
-          "Their tough hides are nearly impenetrable.",
-          "Remember to block.",
-          "They think they're protected?!"
-        ]
-      },
-      {
-        name: "Shield — убит",
-        lines: [
-          "Shield out of service.",
-          "Shield disabled.",
-          "Shield down.",
-          "You cannot shield yourself!",
-          "No one is safe.",
-          "Even the toughest defense has its limits."
-        ]
-      },
-      {
-        name: "Sniper / Marksman",
-        lines: [
-          "Marksman.",
-          "Marksman, please assist.",
-          "Sniper.",
-          "The bald eagle can spot prey up to three miles.",
-          "Sniper killer."
-        ]
-      },
-      {
-        name: "Sniper — убит",
-        lines: [
-          "Marksman out of service.",
-          "Sniper down.",
-          "Sniper...*scrub*...is out of service.",
-          "*scrub* death from afar.",
-          "The killer *scrub* from afar.",
-          "You cannot hide from the supreme one!!!"
-        ]
-      },
-      {
-        name: "Medic / Techie",
-        lines: [
-          "Medical.",
-          "Doctor.",
-          "The doctor is in the house.",
-          "Techie.",
-          "Beware of _______. Please contact your IT department.",
-          "We cannot trust technology!!",
-          "The machine wars have begun.",
-          "This ________ cutting edge tech."
-        ]
-      },
-      {
-        name: "Medic / Techie — убит",
-        lines: [
-          "Doctor has been eliminated.",
-          "Medic is dead.",
-          "Techie down.",
-          "You are experiencing technical difficulties.",
-          "Put not your faith in gadgets!!",
-          "The robot apocalypse.",
-          "Techie...*scrub*...is out of service."
-        ]
-      },
-      {
-        name: "Taser / Zapper",
-        lines: [
-          "Taser.",
-          "Zapper.",
-          "Electrical hazard.",
-          "You're stunning!",
-          "A shocking new thriller.",
-          "They use electricity to stun their prey."
-        ]
-      },
-      {
-        name: "Taser / Zapper — убит",
-        lines: [
-          "Taser out of service.",
-          "Ci vediamo all'inferno.",
-          "Zapper down.",
-          "Zapper do...*scrub*...is out of service.",
-          "Do not be shocked!!",
-          "You can't just zap away the fat!",
-          "The shocking conclusion."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Ближний бой и Убийства",
-    sub: [
-      {
-        name: "Ближнее оружие",
-        lines: [
-          "El puñetazo que lanzó lo dejó inconsciente.",
-          "This bloodthirsty mutant vampire bat will leave a trail of broken bodies in its wake.",
-          "He's took down many and killed mighty kings!",
-          "The elephant crushes its enemies, with devastating results.",
-          "A fall can result in blunt force trauma to the head, and cause brain swelling.",
-          "🎵 *Srub* ...-ddicted! The adrenaline rush! 🎵",
-          "🎵 *Scrub*...-cted to the CONCEPT OF US 🎵",
-          "🎵 I'm out of sync, self inflicted, but it fits like a glov-*scrub* 🎵"
-        ]
-      },
-      {
-        name: "После убийства",
-        lines: [
-          "You can thank me later.",
-          "I believe hoorays are in order.",
-          "Una testa di cazzo in meno.",
-          "I bought you a present.",
-          "Eat this.",
-          "The slaughter's mine!",
-          "Aortic work of art",
-          "'Cause even though it hurts, it's the thousandth time",
-          "I'm addicted, I'm addicted to the friction of....*scrub*",
-          "Or do you know that I'm obsessed with how it feels when we",
-          "Don't you find it all *sudden scrub* ROMANTIC *sudden scrub*"
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Оружие, снаряжение и гаджеты",
-    sub: [
-      {
-        name: "OVERKILL / Подбирает оружие",
-        lines: [
-          "Heavy artillery required.",
-          "We're ready to fight!",
-          "The pack is stronger than ever.",
-          "Time for a CLEANSING FIRE!!!",
-          "Warning: This product may cause headaches, fits of rage, and testicular swelling.",
-          "🎵 *scrub*...-nd dance with me,what is there to lose? 🎵"
-        ]
-      },
-      {
-        name: "Мало патронов",
-        lines: [
-          "Ammo reserves running low. Fill me up, please.",
-          "Cartridges almost depleted. I need ammo.",
-          "I need ammo.",
-          "Do you mind sharing?"
-        ]
-      },
-      {
-        name: "Дрель / бур",
-        lines: [
-          "Drill is securely fixed.",
-          "The drill is active - please stay clear of the moving parts.",
-          "Please call technical support.",
-          "In the event of hardware failure...",
-          "Software malfunction.",
-          "Due to unforeseen technical difficulties, your regularly scheduled programming has been canceled.",
-          "Batteries not included. Some assembly required."
-        ]
-      },
-      {
-        name: "Газ / дым / вспышка",
-        lines: [
-          "Tear gas is banned in most civilised nations.",
-          "Tear gas irritates the nose and eyes.",
-          "A sudden flash can damage your eyesight.",
-          "Would you mind smoking somewhere else?",
-          "Please smoke only in the designated areas.",
-          "Smoking is prohibited.",
-          "In the event of a sudden loss of cabin pressure, secure your own mask before assisting others."
-        ]
-      },
-      {
-        name: "Деплоаблы (Аптечка / патроны / броня)",
-        lines: [
-          "Ammo available.",
-          "Please, enjoy this complimentary ammo.",
-          "ARM YOURSELVES, WARRIORS!!",
-          "Bullets...will fly.",
-          "Additional cartridges are now available.",
-          "Ammunition has arrived.",
-          "Armor available.",
-          "The shell acts like a suit of armor.",
-          "My faith is my armor!!",
-          "Remember to protect yourself!",
-          "It's time...to armor up.",
-          "Medical supplies available.",
-          "Medical supplies have arrived.",
-          "First aid kit.",
-          "First aid kit available.",
-          "Medic bag available.",
-          "Always have the first aid kit on standby.",
-          "*rewind* -ho will come to their aid?"
-        ]
-      },
-      {
-        name: "Турель",
-        lines: [
-          "Deploying sentry.",
-          "Please, enjoy this automated sentry gun.",
-          "But this time, the robot is on our side.",
-          "BE MY SWORD!!! My weapon of TRUTH!!",
-          "Cyborg warriors from beyond the stars."
-        ]
-      },
-      {
-        name: "Зиплайн",
-        lines: [
-          "The zipline is ready.",
-          "An inclined cable, or rope.",
-          "Ziplines are a popular attraction.",
-          "Zip-*fast forward*-line!",
-          "Please proceed to the *scrub* zipline-",
-          "Zipline initiated."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Взаимодействие с NPC",
-    sub: [
-      {
-        name: "Мирные жители (угроза)",
-        lines: [
-          "Keep those arms outstretched!",
-          "Now into a kneeling position!",
-          "Let's get on the floor.",
-          "Please, remain calm.",
-          "Do not panic!",
-          "Thank you for holding.",
-          "You can't run. You can't hide.",
-          "Do not talk during the film.",
-          "Remember, it's only a movie.",
-          "Submit to the SUPREME WILL!!",
-          "Obey, and you SHALL BE REWARDED!!",
-          "I am a GOD made fresh!! Do not DOUBT my power!!!",
-          "The battle for dominance is won.",
-          "The weaker animal knows not to push its luck.",
-          "The iguana lays flat on its belly.",
-          "Heroics will not be tolerated.",
-          "Please follow instructions.",
-          "OBEY my EVERY command!!!",
-          "There is no challenging the hierarchy.",
-          "Do what I say, and you will have a great time!",
-          "Obedience is essential.",
-          "DO YOU HAVE THE SLIGHTEST IDE-E-EA WHAT A MORAL AND ETHICAL PRINCIPAL IS? DO YOU?"
-        ]
-      },
-      {
-        name: "Полицейские",
-        lines: [
-          "Get down and ________ officer.",
-          "No police intervention required.",
-          "Police are on standby.",
-          "Our master is above the law!!",
-          "Government has no power over me!!",
-          "I reject their authority!!",
-          "The pack has a new alpha.",
-          "The predator becomes the prey.",
-          "The police are powerless to stop him.",
-          "A new world order.",
-          "Don't be a cop-",
-          "Officer down.",
-          "Aaaaand down we go!",
-          "They have lost control.",
-          "Surrender."
-        ]
-      },
-      {
-        name: "Живой щит",
-        lines: [
-          "Devil...and human sacrifice.",
-          "May I borrow you?",
-          "Devote yourself to the cause!!",
-          "This is normal.",
-          "A symbiotic relationship.",
-          "Let's see how you hold up!",
-          "Sometimes, you take one for the team!",
-          "Sacrifices must be made.",
-          "You don't have to struggle.",
-          "JOIN me!!",
-          "They're taking hostageeeees."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Добыча",
-    sub: [
-      {
-        name: "Видит лут / сейф",
-        lines: [
-          "Your payment was successfully processed.",
-          "INVEST in your SALVATION!!",
-          "Valuables acquired.",
-          "These are extremely valuable.",
-          "They were promised great riches.",
-          "Deposit accepted.",
-          "Good! Very good!",
-          "That's it! You got it!",
-          "Treasure beyond their wildest dreams.",
-          "This will ensure their survival.",
-          "Has enough financial restitution been recovered?",
-          "Negative, further financial constitution required."
-        ]
-      },
-      {
-        name: "Кража / подбор",
-        lines: [
-          "Please, report lost items.",
-          "We will TAKE what is OURS!!!",
-          "We fight to win!",
-          "To the victor, go the spoils.",
-          "Acquired.",
-          "Feel that instant gratification!",
-          "Is not responsible for lost belongings.",
-          "Please, keep track of your valuables.",
-          "It is time to convey these articles out.",
-          "Please recover as much as you can safely manage."
-        ]
-      },
-      {
-        name: "«Хватит?» / «Взять всё»",
-        lines: [
-          "May I have more?",
-          "How far are you willing to go?",
-          "Think you can go the extra mile?",
-          "I want more.",
-          "Let's push it to the limit!",
-          "The lion is still hungry."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "К напарникам",
-    sub: [
-      {
-        name: "Инспайр / подгонять команду",
-        lines: [
-          "Wake up.",
-          "Proceed.",
-          "Please move quickly.",
-          "Más rápido, imbécil.",
-          "Courez comme si le magasin de cigarettes allait fermer."
-        ]
-      },
-      {
-        name: "ИИ-режим / помощь напарнику",
-        lines: [
-          "I'll wait here. You go on ahead.",
-          "Go ahead.",
-          "Understood.",
-          "Acknowledged.",
-          "Du siehst aus wie ein scheiss Autounfall.",
-          "Please maintain pressure on bandages for at least thirty minutes.",
-          "I don't think that's supposed to go there.",
-          "Please don't do that again.",
-          "Thank you very much.",
-          "You were able to be kind!"
-        ]
-      },
-      {
-        name: "Общий зов",
-        lines: [
-          "Hello, friend!",
-          "You! Yes, you!",
-          "*scrub* My fellow warrior!",
-          "Hola.",
-          "Calling."
-        ]
-      },
-      {
-        name: "Dallas",
-        lines: [
-          "Dallas, nucleus of the US oil industry. A fuel source for the economy. Also a center of the telecommunications industry. Making people talk, Dallas.",
-          "*scrub*...TEXAS!",
-          "*scrub* Criminal mastermind.",
-          "Dallas *is one of the largest cities in Texas.*"
-        ]
-      },
-      {
-        name: "Wolf",
-        lines: [
-          "Wolf, an apex predator, usually preying on larger mammals, the wolf hunts in a pack, cooperating, and using advanced hunting tactics to take down its prey, successful.",
-          "*The most dangerous* canine predator.",
-          "BEWARE the wolf in sheep's clothing!"
-        ]
-      },
-      {
-        name: "Chains",
-        lines: [
-          "When handling firearms always check that the safety is on. Also, do not wield firearms in urban locations or near children. End of message.",
-          "Soldier!"
-        ]
-      },
-      {
-        name: "Hoxton",
-        lines: [
-          "Hoxton shoreditch, borrough of Hackney, London. First recorded in the Domesday book. Please consider a visit to Hoxton market.",
-          "This is a species native to the British Isles.",
-          "Hoxton Square.",
-          "*scrub* I'm a British man!"
-        ]
-      },
-      {
-        name: "Houston",
-        lines: [
-          "Identity theft is a means often employed to gain financial advantage or undo access to someone else's assets or prestige.",
-          "Houston *is one of the largest cities in Texas.*",
-          "*scrub*...his younger brother.",
-          "Hoxto-*rewind*-Houston."
-        ]
-      },
-      {
-        name: "Clover",
-        lines: [
-          "Clover, Trifolium, four leaves for luck, five leaves uncommon, live in clover, thank you.",
-          "*scrub* Killer Leprechaun.",
-          "The ant-*scrub*-queen.",
-          "*scrub*...luck of the Irish!"
-        ]
-      },
-      {
-        name: "Dragan",
-        lines: [
-          "Hello, please do not break the law. Press two for information about your retirement fund. Have you considered a new career? Armed robbery is a felony. Please proceed."
-        ]
-      },
-      {
-        name: "Bonnie",
-        lines: [
-          "Heads or tails? A tossed coin, a metaphor for the uncertainties of life. Of course, the wise player always cheats."
-        ]
-      },
-      {
-        name: "Sokol",
-        lines: [
-          "Power play. Great shot. Goal. Game is over. Win for the Bombers. Please sign here. Welcome to America!"
-        ]
-      },
-      {
-        name: "Jiro",
-        lines: [
-          "A seeker. A hero shall find a treasure. The lost. But it is unknown. Do not be afraid."
-        ]
-      },
-      {
-        name: "Jimmy",
-        lines: [
-          "Who do you want to be today? You can go anywhere, you can be anyone, who do you want to be?"
-        ]
-      },
-      {
-        name: "Sydney",
-        lines: [
-          "Sydney.",
-          "Hey, kid.",
-          "Sydney, a harbour city, built around one of the world's great natural ports. Ferries, opera houses, and sunburn - a lovely combination."
-        ]
-      },
-      {
-        name: "Мир (World)",
-        lines: [
-          "World.",
-          "You there.",
-          "Hello young lady. Welcome. Hello. Do not enter the dingo compound. Danger, do not feed the animals.",
-          "A sphere, spinning quietly in the dark, indifferent to what happens on its surface.",
-          "It does not choose sides. It simply keeps turning.",
-          "Everything ends somewhere on it. Nothing ends because of it.",
-          "Every map of it is already a lie - the moment it's drawn, something on it has changed.",
-          "It owes you nothing, and yet here you still are, standing on it.",
-          "Time moves the same for it whether you are watching or not."
-        ]
-      },
-      {
-        name: "Rust",
-        lines: [
-          "This is a very nice bike. Where did you get it? Riding a motorcycle is fun! Lets bring our shotguns! Let's have some fun."
-        ]
-      },
-      {
-        name: "Wick (John Wick)",
-        lines: [
-          "John, you are needed. You are the angel of death John. Please hold, John."
-        ]
-      },
-      {
-        name: "Joy",
-        lines: [
-          "*scrub* REJOICE!!",
-          "Feel the joy...*scrub*.",
-          "A cyberpunk...*fast forward*."
-        ]
-      },
-      {
-        name: "Pearl",
-        lines: [
-          "Pearls form *in certain _____*.",
-          "It is *scrub* those pearly whites."
-        ]
-      },
-      {
-        name: "Воробей (Crow)",
-        lines: [
-          "Crow.",
-          "Воробей.",
-          "Little bird.",
-          "A small bird, unremarkable to most, yet it survives where larger creatures cannot.",
-          "It nests closest to danger, and calls it home.",
-          "Quick. Watchful. Easily overlooked - that is the advantage.",
-          "A dangerous new ally.",
-          "Hello, please do not break the law. Press two for information about your retirement fund. Have you considered a new career? Armed robbery is a felony. Please proceed."
-        ]
-      },
-      {
-        name: "Эрнест (Ernest)",
-        lines: [
-          "Ernest.",
-          "Ernesto de...",
-          "Yes, you.",
-          "Serious one.",
-          "From an old word meaning serious intent, and resolve.",
-          "A grave name, for a graver purpose.",
-          "He does not raise his voice. He does not need to.",
-          "Identity theft is a means often employed to gain financial advantage or undo access to someone else's assets or prestige."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Состояние и навигация",
-    sub: [
-      {
-        name: "Здоровье / кровотечение",
-        lines: [
-          "Vital signs deteriorating.",
-          "Health status degenerating.",
-          "I'm feeling a bit sick.",
-          "I don't feel too well.",
-          "I think I'm catching a cold.",
-          "Goodbye.",
-          "I need an appointment with the doctor.",
-          "Help.",
-          "Please assist.",
-          "Assistance would be appreciated.",
-          "*Scream* \"GOD DA-A-A-a-a-\"",
-          "*Bitcrushed buzzer* \"AHAHA, ARE YOU KIDDING? I HATE THIS STUPID JO-O-O-O-O-\" *Dial-up Connection Sound*"
-        ]
-      },
-      {
-        name: "Навигация / движение",
-        lines: [
-          "Please make your way inside.",
-          "You have arrived at your destination.",
-          "Please head to the exit.",
-          "This is the wrong way.",
-          "This is the right way.",
-          "Let's go.",
-          "Please jump.",
-          "Please follow.",
-          "Follow me on the path to salvation!",
-          "Just try to keep up.",
-          "Alright! Let's get going!",
-          "In case of fire, do not use elevators. Use...*scrub*"
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Факты («Did you know...»)",
-    lines: [
-      "Did you know that 'banana chips' are deep-fried or dried slices of bananas? They can be covered in sugar or honey to have a sweet taste, or they can be fried in oil and spices to have a saltier taste.",
-      "Did you know that watching television can be bad for your health? Watching television has been linked with obesity and heart disease, especially in the West.",
-      "Did you know that a 'television' or a 'TV' is a telecommunication medium used for transmitting sound with moving images in monochrome or color and in two or three dimensions?",
-      "Did you know that a decapitation is the complete separation of the head from the body? In humans and most other animals, death will always result from such injury.",
-      "Did you know that 'Space Invaders' was the world's first blockbuster arcade video game? Its success marked what is known as the golden age of arcade video games.",
-      "Did you know that according to Abraham Maslow, the most basic needs for human beings are food, water, sleep, and sex?",
-      "Did you know that 'zebras' are several species of African equids united by their distinctive black and white striped coats?",
-      "Did you know that a 'weapon' is any device used with intent to inflict damage or harm to living beings or structures?",
-      "Did you know that the Nintendo Entertainment System was initially called the 'Family Computer' when released in Japan?",
-      "Hello *scrub*. How are you? I am good. Thank you for asking."
-    ]
-  },
-  {
-    cat: "Диктофон в комнате Jacket",
-    lines: [
-      "Six. Cinq. Quatre. Trois. Deux. Un. Magnifique.",
-      "Can I help you? We should shoot you for this.",
-      "Please rewind this feature presentation.",
-      "You belong in a cloaca.",
-      "I'd like to complain to the manager.",
-      "How unexpected.",
-      "I'm getting tired.",
-      "Who knows what the day will bring?",
-      "You are a dead- -next time.",
-      "We are performing to the best of our ability.",
-      "My patience is running thin.",
-      "Great satisfaction. Masculine. Unfortunate.",
-      "We have concerns regarding you. Negative.",
-      "Pellpellpellpellpellpell.",
-      "Attention. You are fecal matter. Please accept this assertion.",
-      "🎵 Oh, they tell me *scrub* ...a sin 🎵",
-      "Apathetic aching argona",
-      "🎵 I wanna scream, so conflicted, but you're....*scrub* 🎵",
-      "🎵 救いの至福は長い間無関心でした 🎵",
-      "🎵 私の考えは幻滅しています 🎵",
-      "Okay, lets talk...",
-      "Stop swinging the bat...",
-      "*Audio glitches* \"You didn't let me finish my sentence...\"",
-      "*Scream* \"GOD DA-A-A-a-a-\"",
-      "*HHHappy chiming* \"Congratulations! You wo-o-o-oo- (won)\"",
-      "Let me get a look at the menagerie!",
-      "End of Side A. Please flip the cassette to continue...",
-      "\"Do you act-t-tu-ually think y-y-you can defe-e-e-ee-eat me?\" *Glitch*",
-      "*Bitcrushed buzzer* \"AHAHA, ARE YOU KIDDING? I HATE THIS STUPID JO-O-O-O-O-\" *Dial-up Connection Sound*"
-    ]
-  },
-  {
-    cat: "Колесо команд / короткие реплики",
-    sub: [
-      {
-        name: "«Чёрт!»",
-        lines: [
-          "Adult content.",
-          "Curse them!",
-          "The...dam.",
-          "Smell like shit.",
-          "Fuck.",
-          "Mierda.",
-          "Unfortunate.",
-          "Swearing is not tolerated.",
-          "To hell with that!"
-        ]
-      },
-      {
-        name: "«Спасибо»",
-        lines: [
-          "Thanks for tuning in!",
-          "Thank you!",
-          "The Supreme One thanks you!",
-          "Cheers.",
-          "A la tienne.",
-          "Spumante per tutti."
-        ]
-      }
-    ]
-  },
-  {
-    cat: "Завершение дела / побег",
-    lines: [
-      "I really enjoyed that.",
-      "I had a great time.",
-      "Job is done. Now, time to relax and enjoy life.",
-      "Operation completed successfully!",
-      "What a lovely day, right?",
-      "What a lovely day. *scrub* Deberíamos haber contratado a un portugués.",
-      "Thank you for flying with us...",
-      "We hope that you enjoyed the show.",
-      "Thank you for being in your seat and not disturbing the peace.",
-      "Thank you for traveling with us. We look forward to seeing you again soon.",
-      "Thank you for not disturbing the passengers in the Quiet Zone.",
-      "Time to go.",
-      "That's enough for today!",
-      "It is done.",
-      "Please, prepare for landing.",
-      "We have done all we can!",
-      "Hit the showers!",
-      "We really kicked some butt on that one!",
-      "Come see: 'Decapitator 2: Wrath of the Bloodsucking Sex Goblins'. Rated PG.",
-      "Nature is full of violence and carnage, and we wouldn't have it any other way.",
-      "This exercise is done. Now, time to relax and enjoy life.",
-      "The Supreme One is with us! We are TRULY blessed!!",
-      "If New York is your final destination, welcome home.",
-      "Thank you for shopping with us. Please ensure you have all your personal belongings."
-    ]
-  },
-  {
-    cat: "Разное",
-    lines: [
-      "Do you know what time it is?",
-      "Fresse, Arsch.",
-      "Bewegt eure Ärsche."
-    ]
-  }
+{ cat: "Маскировка / начало дела", lines: [
+  "Please be advised, the following presentation is not intended for minors.",
+  "The following presentation has been approved for mature audiences only.",
+  "Now enjoy the show.",
+  "Allons-y.",
+  "We hope you have a pleasant flight!",
+  "And now, our feature presentation.",
+  "Time to work out a sweat!",
+  "The hunt is on.",
+  "For I am a harbinger of righteous violence!",
+  "The following content contains scenes of graphic violence. Viewer discretion is advised.",
+  "Just another day, throw your cares awa...."
+]},
+{ cat: "Завершение дела / побег", lines: [
+  "I really enjoyed that.",
+  "I had a great time.",
+  "Job is done. Now, time to relax and enjoy life.",
+  "Operation completed successfully!",
+  "What a lovely day, right?",
+  "What a lovely day. *scrub* Deberíamos haber contratado a un portugués.",
+  "Thank you for flying with us...",
+  "We hope that you enjoyed the show.",
+  "Thank you for being in your seat and not disturbing the peace.",
+  "Thank you for traveling with us. We look forward to seeing you again soon.",
+  "Thank you for not disturbing the passengers in the Quiet Zone.",
+  "Time to go.",
+  "That's enough for today!",
+  "It is done.",
+  "Please, prepare for landing.",
+  "We have done all we can!",
+  "Hit the showers!",
+  "We really kicked some butt on that one!",
+  "Come see: 'Decapitator 2: Wrath of the Bloodsucking Sex Goblins'. Rated PG.",
+  "Nature is full of violence and carnage, and we wouldn't have it any other way.",
+  "This exercise is done. Now, time to relax and enjoy life.",
+  "The Supreme One is with us! We are TRULY blessed!!",
+  "If New York is your final destination, welcome home.",
+  "Thank you for shopping with us. Please ensure you have all your personal belongings."
+]},
+{ cat: "Стелс: камеры, охрана, дроны", sub: [
+  { name: "Камера", lines: [
+    "A camera.",
+    "Security cameras.",
+    "Stay clear.",
+    "All seeing, all knowing!!",
+    "Filmed in...3D.",
+    "Camara.",
+    "You're being recorded for quality assurance."
+  ]},
+  { name: "Охранник", lines: [
+    "Guard.",
+    "Security guard.",
+    "The guard approaches.",
+    "We must beware of ____",
+    "Senses trouble.",
+    "Evil is lurking.",
+    "Authority figure."
+  ]},
+  { name: "Мирный житель (стелс-заметка)", lines: [
+    "Simple-minded sheep!",
+    "Average, everyday Americans.",
+    "Humans are the ____",
+    "Civilian."
+  ]},
+  { name: "Дрон", lines: [
+    "...threat from above.",
+    "A killing machine.",
+    "The humming bird is the only bird that can truly hover.",
+    "Please: Respect my privacy.",
+    "It makes a low droning sound to attract its mate."
+  ]}
+]},
+{ cat: "Волна ассолта", lines: [
+  "Oh, how nice to get some company.",
+  "It's getting hot.",
+  "The guests are coming any minute.",
+  "We're expecting visitors.",
+  "The anticipation is half the fun.",
+  "IS FUCKING GENOCIDAL!*scrub*"
+]},
+{ cat: "Спецюниты", sub: [
+  { name: "Bulldozer", lines: [
+    "Bulldozer.",
+    "Construction vehicle on site.",
+    "The bull charges.",
+    "...an unstoppable force.",
+    "Look at those muscles!"
+  ]},
+  { name: "Bulldozer — убит", lines: [
+    "Bulldozer disabled.",
+    "Bulldozer no longer in working order.",
+    "Bulldozer down.",
+    "Bulldozer...*scrub*...is out of service.",
+    "The beast has fallen.",
+    "We are stronger than the STRONGEST foe!!!",
+    "Nice work, big guy!"
+  ]},
+  { name: "Cloaker", lines: [
+    "Cloaker.",
+    "A long, flowing over-garment.",
+    "*scrub* Cloap *scrub* ker.",
+    "Ninja assassins.",
+    "Get ready to kick!"
+  ]},
+  { name: "Cloaker — убит", lines: [
+    "Cloaker non-operational.",
+    "Cloaker message received.",
+    "Cloaker down.",
+    "Cloaker...*scrub*...is out of service.",
+    "*scrub* most people hate leg day!",
+    "BEGONE, DEMON! BEGONE!!",
+    "The veil is lifted."
+  ]},
+  { name: "Nader (газ)", lines: [
+    "Nader.",
+    "Chemical weapons.",
+    "Avert your eyes.",
+    "The reaction is highly combustible.",
+    "I weep for them!"
+  ]},
+  { name: "Nader — убит", lines: [
+    "Nader down.",
+    "Nader do...*scrub*...is out of service.",
+    "*scrub*...a blast from the past.",
+    "____, and the smoke is cleared away.",
+    "Smoking kills!"
+  ]},
+  { name: "Shield", lines: [
+    "Shield.",
+    "Please use protection.",
+    "Their tough hides are nearly impenetrable.",
+    "Remember to block.",
+    "They think they're protected?!"
+  ]},
+  { name: "Shield — убит", lines: [
+    "Shield out of service.",
+    "Shield disabled.",
+    "Shield down.",
+    "You cannot shield yourself!",
+    "No one is safe.",
+    "Even the toughest defense has its limits."
+  ]},
+  { name: "Sniper / Marksman", lines: [
+    "Marksman.",
+    "Marksman, please assist.",
+    "Sniper.",
+    "The bald eagle can spot prey up to three miles.",
+    "Sniper killer."
+  ]},
+  { name: "Sniper — убит", lines: [
+    "Marksman out of service.",
+    "Sniper down.",
+    "Sniper...*scrub*...is out of service.",
+    "*scrub* death from afar.",
+    "The killer *scrub* from afar.",
+    "You cannot hide from the supreme one!!!"
+  ]},
+  { name: "Medic / Techie", lines: [
+    "Medical.",
+    "Doctor.",
+    "The doctor is in the house.",
+    "Techie.",
+    "Beware of _______. Please contact your IT department.",
+    "We cannot trust technology!!",
+    "The machine wars have begun.",
+    "This ________ cutting edge tech."
+  ]},
+  { name: "Medic / Techie — убит", lines: [
+    "Doctor has been eliminated.",
+    "Medic is dead.",
+    "Techie down.",
+    "You are experiencing technical difficulties.",
+    "Put not your faith in gadgets!!",
+    "The robot apocalypse.",
+    "Techie...*scrub*...is out of service."
+  ]},
+  { name: "Taser / Zapper", lines: [
+    "Taser.",
+    "Zapper.",
+    "Electrical hazard.",
+    "You're stunning!",
+    "A shocking new thriller.",
+    "They use electricity to stun their prey."
+  ]},
+  { name: "Taser / Zapper — убит", lines: [
+    "Taser out of service.",
+    "Ci vediamo all'inferno.",
+    "Zapper down.",
+    "Zapper do...*scrub*...is out of service.",
+    "Do not be shocked!!",
+    "You can't just zap away the fat!",
+    "The shocking conclusion."
+  ]}
+]},
+{ cat: "После убийства", lines: [
+  "You can thank me later.",
+  "I believe hoorays are in order.",
+  "Una testa di cazzo in meno.",
+  "I bought you a present.",
+  "Eat this.",
+  "The slaughter's mine!",
+  "Aortic work of art",
+  "'Cause even though it hurts, it's the thousandth time",
+  "I'm addicted, I'm addicted to the friction of....*scrub*",
+  "Or do you know that I'm obsessed with how it feels when we",
+  "Don't you find it all *sudden scrub* ROMANTIC *sudden scrub*"
+]},
+{ cat: "Инспайр / подгонять команду", lines: [
+  "Wake up.",
+  "Proceed.",
+  "Please move quickly.",
+  "Más rápido, imbécil.",
+  "Courez comme si le magasin de cigarettes allait fermer."
+]},
+{ cat: "Пейджер", lines: [
+  "You have reached Dennaton Enterprises, we can't take your call at the moment. Please leave a message after the beep and we'll get back to you.",
+  "This is GenSec tech support. If you have a problem with your radio, please contact us during normal business hours. Thank you.",
+  "This is a test broadcast of the emergency air waves. This is a test, do not be alarmed, this is a test.",
+  "We are experiencing technical issues. There is no cause for alarm. Please be at ease.",
+  "Hello officer, how are you? Hola Officer, como estas?...good, thank you for asking.",
+  "The supreme one hears your call, and through me, he has answered! Tell me your deepest fears!",
+  "Do not be afraid, child. I will shine a light in the darkness. And all will be well.",
+  "What is it you seek? Answers? Meaning in a meaningless world? Well child, you've come to the right place. I have every answer to every question!",
+  "The government LIES to you! There IS no danger! Our practices are COMPLETELY safe!",
+  "The danger has passed, and the pack can rest easy. They are safe...for now.",
+  "As a result of human activity, there are very few predators left in this area.",
+  "According to Abraham Maslow, the most basic needs for human beings are food, water, sleep, and sex.",
+  "They thought they were safe. They thought they had nothing to fear. They were right.",
+  "A masked killer on the loose, a young woman fighting for her life, a city plunged into chaos. Come see: 'Midnight Animal'. Now playing.",
+  "Coming soon. Nothing.",
+  "There is nothing to worry about. We are completely in control. Our opponents cannot touch us!",
+  "You're doing great work! I'm proud of you! Why don't we take a 15 minute cooldown!",
+  "Just inhale nice...and slow. It is important to stay relaxed.",
+  "High blood pressure kills more Americans every year than armed robbery! With these techniques, you can relax your mind and disarm opponents. Kill two birds with one stone!",
+  "Caution: Wet floor. Please proceed with extreme vigilance.",
+  "For your own safety, please remain seated until the vehicle has come to a complete stop.",
+  "The customer service desk is now closed. Have a nice evening."
+]},
+{ cat: "Газ / дым / вспышка", lines: [
+  "Tear gas is banned in most civilised nations.",
+  "Tear gas irritates the nose and eyes.",
+  "A sudden flash can damage your eyesight.",
+  "Would you mind smoking somewhere else?",
+  "Please smoke only in the designated areas.",
+  "Smoking is prohibited.",
+  "In the event of a sudden loss of cabin pressure, secure your own mask before assisting others."
+]},
+{ cat: "Навигация / движение", lines: [
+  "Please make your way inside.",
+  "You have arrived at your destination.",
+  "Please head to the exit.",
+  "This is the wrong way.",
+  "This is the right way.",
+  "Let's go.",
+  "Please jump.",
+  "Please follow.",
+  "Follow me on the path to salvation!",
+  "Just try to keep up.",
+  "Alright! Let's get going!",
+  "In case of fire, do not use elevators. Use...*scrub*"
+]},
+{ cat: "Здоровье / кровотечение", lines: [
+  "Vital signs deteriorating.",
+  "Health status degenerating.",
+  "I'm feeling a bit sick.",
+  "I don't feel too well.",
+  "I think I'm catching a cold.",
+  "Goodbye.",
+  "I need an appointment with the doctor.",
+  "Help.",
+  "Please assist.",
+  "Assistance would be appreciated.",
+  "*Scream* \"GOD DA-A-A-a-a-\"",
+  "*Bitcrushed buzzer* \"AHAHA, ARE YOU KIDDING? I HATE THIS STUPID JO-O-O-O-O-\" *Dial-up Connection Sound*"
+]},
+{ cat: "Мало патронов", lines: [
+  "Ammo reserves running low. Fill me up, please.",
+  "Cartridges almost depleted. I need ammo.",
+  "I need ammo.",
+  "Do you mind sharing?"
+]},
+{ cat: "Дрель / бур", lines: [
+  "Drill is securely fixed.",
+  "The drill is active - please stay clear of the moving parts.",
+  "Please call technical support.",
+  "In the event of hardware failure...",
+  "Software malfunction.",
+  "Due to unforeseen technical difficulties, your regularly scheduled programming has been canceled.",
+  "Batteries not included. Some assembly required."
+]},
+{ cat: "К напарникам", sub: [
+  { name: "Общий зов", lines: [
+    "Hello, friend!",
+    "You! Yes, you!",
+    "*scrub* My fellow warrior!",
+    "Hola.",
+    "Calling."
+  ]},
+  { name: "Dallas", lines: [
+    "Dallas, nucleus of the US oil industry. A fuel source for the economy. Also a center of the telecommunications industry. Making people talk, Dallas.",
+    "*scrub*...TEXAS!",
+    "*scrub* Criminal mastermind.",
+    "Dallas *is one of the largest cities in Texas.*"
+  ]},
+  { name: "Wolf", lines: [
+    "Wolf, an apex predator, usually preying on larger mammals, the wolf hunts in a pack, cooperating, and using advanced hunting tactics to take down its prey, successful.",
+    "*The most dangerous* canine predator.",
+    "BEWARE the wolf in sheep's clothing!"
+  ]},
+  { name: "Chains", lines: [
+    "When handling firearms always check that the safety is on. Also, do not wield firearms in urban locations or near children. End of message.",
+    "Soldier!"
+  ]},
+  { name: "Hoxton", lines: [
+    "Hoxton shoreditch, borrough of Hackney, London. First recorded in the Domesday book. Please consider a visit to Hoxton market.",
+    "This is a species native to the British Isles.",
+    "Hoxton Square.",
+    "*scrub* I'm a British man!"
+  ]},
+  { name: "Houston", lines: [
+    "Identity theft is a means often employed to gain financial advantage or undo access to someone else's assets or prestige.",
+    "Houston *is one of the largest cities in Texas.*",
+    "*scrub*...his younger brother.",
+    "Hoxto-*rewind*-Houston."
+  ]},
+  { name: "Clover", lines: [
+    "Clover, Trifolium, four leaves for luck, five leaves uncommon, live in clover, thank you.",
+    "*scrub* Killer Leprechaun.",
+    "The ant-*scrub*-queen.",
+    "*scrub*...luck of the Irish!"
+  ]},
+  { name: "Dragan", lines: [
+    "Hello, please do not break the law. Press two for information about your retirement fund. Have you considered a new career? Armed robbery is a felony. Please proceed."
+  ]},
+  { name: "Bonnie", lines: [
+    "Heads or tails? A tossed coin, a metaphor for the uncertainties of life. Of course, the wise player always cheats."
+  ]},
+  { name: "Sokol", lines: [
+    "Power play. Great shot. Goal. Game is over. Win for the Bombers. Please sign here. Welcome to America!"
+  ]},
+  { name: "Jiro", lines: [
+    "A seeker. A hero shall find a treasure. The lost. But it is unknown. Do not be afraid."
+  ]},
+  { name: "Jimmy", lines: [
+    "Who do you want to be today? You can go anywhere, you can be anyone, who do you want to be?"
+  ]},
+  { name: "Sydney", lines: [
+    "Sydney.",
+    "Hey, kid.",
+    "Sydney, a harbour city, built around one of the world's great natural ports. Ferries, opera houses, and sunburn - a lovely combination."
+  ]},
+  { name: "Мир (World)", lines: [
+    "World.",
+    "You there.",
+    "Hello young lady. Welcome. Hello. Do not enter the dingo compound. Danger, do not feed the animals.",
+    "A sphere, spinning quietly in the dark, indifferent to what happens on its surface.",
+    "It does not choose sides. It simply keeps turning.",
+    "Everything ends somewhere on it. Nothing ends because of it.",
+    "Every map of it is already a lie - the moment it's drawn, something on it has changed.",
+    "It owes you nothing, and yet here you still are, standing on it.",
+    "Time moves the same for it whether you are watching or not."
+  ]},
+  { name: "Rust", lines: [
+    "This is a very nice bike. Where did you get it? Riding a motorcycle is fun! Lets bring our shotguns! Let's have some fun."
+  ]},
+  { name: "Wick (John Wick)", lines: [
+    "John, you are needed. You are the angel of death John. Please hold, John."
+  ]},
+  { name: "Joy", lines: [
+    "*scrub* REJOICE!!",
+    "Feel the joy...*scrub*.",
+    "A cyberpunk...*fast forward*."
+  ]},
+  { name: "Pearl", lines: [
+    
+    "Pearls form *in certain _____*.",
+    "It is *scrub* those pearly whites."
+  ]},
+  { name: "Воробей (Crow)", lines: [
+    "Crow.",
+    "Воробей.",
+    "Little bird.",
+    "A small bird, unremarkable to most, yet it survives where larger creatures cannot.",
+    "It nests closest to danger, and calls it home.",
+    "Quick. Watchful. Easily overlooked - that is the advantage.",
+    "A dangerous new ally.",
+    "Hello, please do not break the law. Press two for information about your retirement fund. Have you considered a new career? Armed robbery is a felony. Please proceed.",
+  ]},
+  { name: "Эрнест (Ernest)", lines: [
+    "Ernest.",
+    "Ernesto de...",
+    "Yes, you.",
+    "Serious one.",
+    "From an old word meaning serious intent, and resolve.",
+    "A grave name, for a graver purpose.",
+    "He does not raise his voice. He does not need to.",
+    "Identity theft is a means often employed to gain financial advantage or undo access to someone else's assets or prestige.",
+  ]}
+]},
+{ cat: "Факты («Did you know...»)", lines: [
+  "Did you know that 'banana chips' are deep-fried or dried slices of bananas? They can be covered in sugar or honey to have a sweet taste, or they can be fried in oil and spices to have a saltier taste.",
+  "Did you know that watching television can be bad for your health? Watching television has been linked with obesity and heart disease, especially in the West.",
+  "Did you know that a 'television' or a 'TV' is a telecommunication medium used for transmitting sound with moving images in monochrome or color and in two or three dimensions?",
+  "Did you know that a decapitation is the complete separation of the head from the body? In humans and most other animals, death will always result from such injury.",
+  "Did you know that 'Space Invaders' was the world's first blockbuster arcade video game? Its success marked what is known as the golden age of arcade video games.",
+  "Did you know that according to Abraham Maslow, the most basic needs for human beings are food, water, sleep, and sex?",
+  "Did you know that 'zebras' are several species of African equids united by their distinctive black and white striped coats?",
+  "Did you know that a 'weapon' is any device used with intent to inflict damage or harm to living beings or structures?",
+  "Did you know that the Nintendo Entertainment System was initially called the 'Family Computer' when released in Japan?",
+  "Hello *scrub*. How are you? I am good. Thank you for asking."
+]},
+{ cat: "Диктофон в комнате Jacket", lines: [
+  "Six. Cinq. Quatre. Trois. Deux. Un. Magnifique.",
+  "Can I help you? We should shoot you for this.",
+  "Please rewind this feature presentation.",
+  "You belong in a cloaca.",
+  "I'd like to complain to the manager.",
+  "How unexpected.",
+  "I'm getting tired.",
+  "Who knows what the day will bring?",
+  "You are a dead- -next time.",
+  "We are performing to the best of our ability.",
+  "My patience is running thin.",
+  "Great satisfaction. Masculine. Unfortunate.",
+  "We have concerns regarding you. Negative.",
+  "Pellpellpellpellpellpell.",
+  "Attention. You are fecal matter. Please accept this assertion.",
+  "Oh, they tell me *scrub* ...a sin",
+  "Apathetic aching argona",
+  "I wanna scream, so conflicted, but you're....*scrub*",
+  "救いの至福は長い間無関心でした",
+  "私の考えは幻滅しています",
+  "Okay, lets talk...",
+  "Stop swinging the bat...",
+  "*Audio glitches* \"You didn't let me finish my sentence...\"",
+  "*Scream* \"GOD DA-A-A-a-a-\"",
+  "*HHHappy chiming* \"Congratulations! You wo-o-o-oo- (won)\"",
+  "Let me get a look at the menagerie!",
+  "End of Side A. Please flip the cassette to continue...",
+  "\"Do you act-t-tu-ually think y-y-you can defe-e-e-ee-eat me?\" *Glitch*",
+  "*Bitcrushed buzzer* \"AHAHA, ARE YOU KIDDING? I HATE THIS STUPID JO-O-O-O-O-\" *Dial-up Connection Sound*"
+]},
+{ cat: "ИИ-режим / помощь напарнику", lines: [
+  "I'll wait here. You go on ahead.",
+  "Go ahead.",
+  "Understood.",
+  "Acknowledged.",
+  "Du siehst aus wie ein scheiss Autounfall.",
+  "Please maintain pressure on bandages for at least thirty minutes.",
+  "I don't think that's supposed to go there.",
+  "Please don't do that again.",
+  "Thank you very much.",
+  "You were able to be kind!"
+]},
+{ cat: "Взаимодействие с NPC", sub: [
+  { name: "Мирные жители (угроза)", lines: [
+    "Keep those arms outstretched!",
+    "Now into a kneeling position!",
+    "Let's get on the floor.",
+    "Please, remain calm.",
+    "Do not panic!",
+    "Thank you for holding.",
+    "You can't run. You can't hide.",
+    "Do not talk during the film.",
+    "Remember, it's only a movie.",
+    "Submit to the SUPREME WILL!!",
+    "Obey, and you SHALL BE REWARDED!!",
+    "I am a GOD made fresh!! Do not DOUBT my power!!!",
+    "The battle for dominance is won.",
+    "The weaker animal knows not to push its luck.",
+    "The iguana lays flat on its belly.",
+    "Heroics will not be tolerated.",
+    "Please follow instructions.",
+    "OBEY my EVERY command!!!",
+    "There is no challenging the hierarchy.",
+    "Do what I say, and you will have a great time!",
+    "Obedience is essential.",
+    "DO YOU HAVE THE SLIGHTEST IDE-E-EA WHAT A MORAL AND ETHICAL PRINCIPAL IS? DO YOU?"
+  ]},
+  { name: "Полицейские", lines: [
+    "Get down and ________ officer.",
+    "No police intervention required.",
+    "Police are on standby.",
+    "Our master is above the law!!",
+    "Government has no power over me!!",
+    "I reject their authority!!",
+    "The pack has a new alpha.",
+    "The predator becomes the prey.",
+    "The police are powerless to stop him.",
+    "A new world order.",
+    "Don't be a cop-",
+    "Officer down.",
+    "Aaaaand down we go!",
+    "They have lost control.",
+    "Surrender."
+  ]},
+  { name: "Живой щит", lines: [
+    "Devil...and human sacrifice.",
+    "May I borrow you?",
+    "Devote yourself to the cause!!",
+    "This is normal.",
+    "A symbiotic relationship.",
+    "Let's see how you hold up!",
+    "Sometimes, you take one for the team!",
+    "Sacrifices must be made.",
+    "You don't have to struggle.",
+    "JOIN me!!",
+    "They're taking hostageeeees."
+  ]}
+]},
+{ cat: "Добыча", sub: [
+  { name: "Видит лут / сейф", lines: [
+    "Your payment was successfully processed.",
+    "INVEST in your SALVATION!!",
+    "Valuables acquired.",
+    "These are extremely valuable.",
+    "They were promised great riches.",
+    "Deposit accepted.",
+    "Good! Very good!",
+    "That's it! You got it!",
+    "Treasure beyond their wildest dreams.",
+    "This will ensure their survival.",
+    "Has enough financial restitution been recovered?",
+    "Negative, further financial constitution required."
+  ]},
+  { name: "Кража / подбор", lines: [
+    "Please, report lost items.",
+    "We will TAKE what is OURS!!!",
+    "We fight to win!",
+    "To the victor, go the spoils.",
+    "Acquired.",
+    "Feel that instant gratification!",
+    "Is not responsible for lost belongings.",
+    "Please, keep track of your valuables.",
+    "It is time to convey these articles out.",
+    "Please recover as much as you can safely manage."
+  ]},
+  { name: "«Хватит?» / «Взять всё»", lines: [
+    "May I have more?",
+    "How far are you willing to go?",
+    "Think you can go the extra mile?",
+    "I want more.",
+    "Let's push it to the limit!",
+    "The lion is still hungry."
+  ]}
+]},
+{ cat: "OVERKILL-оружие", sub: [
+  { name: "Ближний бой", lines: [
+    "El puñetazo que lanzó lo dejó inconsciente.",
+    "This bloodthirsty mutant vampire bat will leave a trail of broken bodies in its wake.",
+    "He's took down many and killed mighty kings!",
+    "The elephant crushes its enemies, with devastating results.",
+    "A fall can result in blunt force trauma to the head, and cause brain swelling.",
+    "*Scrub* ...-ddicted! The adrenaline rush!",
+    "*Scrub*...-cted to the CONCEPT OF US",
+    "I'm out of sync, self inflicted, but it fits like a glov-*scrub*"
+  ]},
+  { name: "Подбирает оружие", lines: [
+    "Heavy artillery required.",
+    "We're ready to fight!",
+    "The pack is stronger than ever.",
+    "Time for a CLEANSING FIRE!!!",
+    "Warning: This product may cause headaches, fits of rage, and testicular swelling."
+  ]}
+]},
+{ cat: "Деплоаблы / зиплайн", sub: [
+  { name: "Аптечка / патроны / броня", lines: [
+    "Ammo available.",
+    "Please, enjoy this complimentary ammo.",
+    "ARM YOURSELVES, WARRIORS!!",
+    "Bullets...will fly.",
+    "Additional cartridges are now available.",
+    "Ammunition has arrived.",
+    "Armor available.",
+    "The shell acts like a suit of armor.",
+    "My faith is my armor!!",
+    "Remember to protect yourself!",
+    "It's time...to armor up.",
+    "Medical supplies available.",
+    "Medical supplies have arrived.",
+    "First aid kit.",
+    "First aid kit available.",
+    "Medic bag available.",
+    "Always have the first aid kit on standby.",
+    "*rewind* -ho will come to their aid?"
+  ]},
+  { name: "Турель", lines: [
+    "Deploying sentry.",
+    "Please, enjoy this automated sentry gun.",
+    "But this time, the robot is on our side.",
+    "BE MY SWORD!!! My weapon of TRUTH!!",
+    "Cyborg warriors from beyond the stars."
+  ]},
+  { name: "Зиплайн", lines: [
+    "The zipline is ready.",
+    "An inclined cable, or rope.",
+    "Ziplines are a popular attraction.",
+    "Zip-*fast forward*-line!",
+    "Please proceed to the *scrub* zipline-",
+    "Zipline initiated."
+  ]}
+]},
+{ cat: "Колесо команд / короткие реплики", sub: [
+  { name: "«Чёрт!»", lines: [
+    "Adult content.",
+    "Curse them!",
+    "The...dam.",
+    "Smell like shit.",
+    "Fuck.",
+    "Mierda.",
+    "Unfortunate.",
+    "Swearing is not tolerated.",
+    "To hell with that!"
+  ]},
+  { name: "«Спасибо»", lines: [
+    "Thanks for tuning in!",
+    "Thank you!",
+    "The Supreme One thanks you!",
+    "Cheers.",
+    "A la tienne.",
+    "Spumante per tutti."
+  ]}
+]},
+{ cat: "Разное", lines: [
+  "Do you know what time it is?",
+  "Fresse, Arsch.",
+  "Bewegt eure Ärsche."
+]},
 ];
 
 /* ---------- RENDER ---------- */
@@ -1095,6 +868,8 @@ function buildSubcat(sub){
   return box;
 }
 
+// Re-measure and grow every ancestor .catbody so a newly opened subcategory
+// is never clipped by its parent's fixed max-height.
 function growAncestorCats(el){
   let node = el.closest('.cat');
   const step = () => {
@@ -1110,6 +885,8 @@ function growAncestorCats(el){
     }
   };
   step();
+  // run again after the subcategory's own transition finishes, in case
+  // scrollHeight was measured mid-animation
   setTimeout(() => {
     let n = el.closest('.cat');
     while(n){
@@ -1217,5 +994,6 @@ function filterAll(query){
 document.getElementById('search').addEventListener('input', (e)=> filterAll(e.target.value));
 filterAll('');
 </script>
+
 </body>
 </html>
