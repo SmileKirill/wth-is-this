@@ -1146,7 +1146,7 @@ function buildCat(group){
     group.lines.forEach(l => body.appendChild(makeQuote(l)));
   }
   if(group.sub){
-    group.sub.forEach(s => buildCat(group) ? body.appendChild(buildSubcat(s)) : null);
+    group.sub.forEach(s => body.appendChild(buildSubcat(s)));
   }
 
   head.addEventListener('click', () => {
@@ -1217,6 +1217,5 @@ function filterAll(query){
 document.getElementById('search').addEventListener('input', (e)=> filterAll(e.target.value));
 filterAll('');
 </script>
-
 </body>
 </html>
