@@ -417,7 +417,7 @@ const GROUPS = [
           "He's took down many and killed mighty kings!",
           "The elephant crushes its enemies, with devastating results.",
           "A fall can result in blunt force trauma to the head, and cause brain swelling.",
-          "🎵 *Srub* ...-ddicted! The adrenaline rush! 🎵",
+          "🎵 *Scrub* ...-ddicted! The adrenaline rush! 🎵",
           "🎵 *Scrub*...-cted to the CONCEPT OF US 🎵",
           "🎵 I'm out of sync, self inflicted, but it fits like a glov-*scrub* 🎵"
         ]
@@ -1123,6 +1123,13 @@ function makeQuote(line){
   return q;
 }
 
+function updateCatHeight(box){
+  const body = box.querySelector(':scope > .catbody');
+  if(body && box.classList.contains('open')){
+    body.style.maxHeight = body.scrollHeight + 'px';
+  }
+}
+
 function buildSubcat(sub){
   const box = document.createElement('div');
   box.className = 'subcat';
@@ -1141,10 +1148,13 @@ function buildSubcat(sub){
   body.className = 'subbody';
   sub.lines.forEach(l => body.appendChild(makeQuote(l)));
 
-  head.addEventListener('click', () => {
+  head.addEventListener('click', (e) => {
+    e.stopPropagation();
     box.classList.toggle('open');
     body.style.maxHeight = box.classList.contains('open') ? body.scrollHeight + 'px' : '0';
-    growAncestorCats(box);
+    
+    const parentCat = box.closest('.cat');
+    if(parentCat) updateCatHeight(parentCat);
   });
 
   box.appendChild(head);
@@ -1152,36 +1162,9 @@ function buildSubcat(sub){
   return box;
 }
 
-function growAncestorCats(el){
-  let node = el.closest('.cat');
-  const step = () => {
-    if(!node) return;
-    const cb = node.querySelector(':scope > .catbody');
-    if(cb && node.classList.contains('open')){
-      cb.style.maxHeight = cb.scrollHeight + 'px';
-    }
-    const parentCat = node.parentElement ? node.parentElement.closest('.cat') : null;
-    if(parentCat && parentCat !== node){
-      node = parentCat;
-      step();
-    }
-  };
-  step();
-  setTimeout(() => {
-    let n = el.closest('.cat');
-    while(n){
-      const cb = n.querySelector(':scope > .catbody');
-      if(cb && n.classList.contains('open')){
-        cb.style.maxHeight = cb.scrollHeight + 'px';
-      }
-      n = n.parentElement ? n.parentElement.closest('.cat') : null;
-    }
-  }, 260);
-}
-
 function buildCat(group){
   const box = document.createElement('div');
-  box.className = 'cat';
+  box.className = 'cat open'; // По умолчанию открываем основные категории
 
   const totalCount = (group.lines ? group.lines.length : 0) +
     (group.sub ? group.sub.reduce((a,s)=>a+s.lines.length,0) : 0);
@@ -1213,6 +1196,11 @@ function buildCat(group){
 
   box.appendChild(head);
   box.appendChild(body);
+
+  setTimeout(() => {
+    if(box.classList.contains('open')) body.style.maxHeight = body.scrollHeight + 'px';
+  }, 0);
+
   return box;
 }
 
@@ -1257,13 +1245,6 @@ function filterAll(query){
         catEl.classList.add('open');
         const cb = catEl.querySelector('.catbody');
         cb.style.maxHeight = cb.scrollHeight + 'px';
-      } else {
-        catEl.classList.remove('open');
-        catEl.querySelector('.catbody').style.maxHeight = '0';
-        catEl.querySelectorAll('.subcat').forEach(s=>{
-          s.classList.remove('open');
-          s.querySelector('.subbody').style.maxHeight = '0';
-        });
       }
     }
   });
@@ -1272,7 +1253,6 @@ function filterAll(query){
 }
 
 document.getElementById('search').addEventListener('input', (e)=> filterAll(e.target.value));
-filterAll('');
 </script>
 
 </body>
