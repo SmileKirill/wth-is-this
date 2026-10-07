@@ -64,14 +64,29 @@
     color:var(--muted); font-size:0.75rem; margin-left:8px; font-weight:normal;
   }
   .chevron{
-    color:var(--muted); font-size:0.8rem; transition:transform .2s; flex-shrink:0;
+    color:var(--muted); font-size:0.8rem; transition:transform .25s; flex-shrink:0;
   }
   .cat.open .chevron{ transform:rotate(90deg); }
-  .catbody{
-    max-height:0; overflow:hidden; transition:max-height .25s ease;
-    padding:0 10px;
+
+  /* CSS Grid Accordion technique */
+  .catbody-wrap, .subbody-wrap {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.25s ease;
   }
-  .cat.open .catbody{ padding:0 10px 10px; }
+  .cat.open > .catbody-wrap,
+  .subcat.open > .subbody-wrap {
+    grid-template-rows: 1fr;
+  }
+  .catbody, .subbody {
+    overflow: hidden;
+  }
+  .catbody-inner {
+    padding: 0 10px 10px;
+  }
+  .subbody-inner {
+    padding-top: 6px;
+  }
 
   .subcat{ margin-top:8px; }
   .subcat > .subhead{
@@ -82,10 +97,8 @@
   .subcat > .subhead h3{
     margin:0; font-size:0.82rem; color:var(--text); font-weight:normal;
   }
-  .subcat .schevron{ color:var(--muted); font-size:0.75rem; transition:transform .2s; }
+  .subcat .schevron{ color:var(--muted); font-size:0.75rem; transition:transform .25s; }
   .subcat.open .schevron{ transform:rotate(90deg); }
-  .subbody{ max-height:0; overflow:hidden; transition:max-height .25s ease; }
-  .subcat.open .subbody{ padding-top:6px; }
 
   .quote{
     display:flex; align-items:flex-start; gap:10px;
@@ -262,6 +275,310 @@ const GROUPS = [
       },
       {
         name: "Bulldozer — убит",
+        lines: [
+          "Bulldozer disabled.",
+          "Bulldozer no longer in working order.",
+          "Bulldozer down.",
+          "Bulldozer...*scrub*...is out of service.",
+          "The beast has fallen.",
+          "We are stronger than the STRONGEST foe!!!",
+          "Nice work, big guy!"
+        ]
+      },
+      {
+        name: "Cloaker",
+        lines: [
+          "Cloaker.",
+          "A long, flowing over-garment.",
+          "*scrub* Cloap *scrub* ker.",
+          "Ninja assassins.",
+          "Get ready to kick!"
+        ]
+      },
+      {
+        name: "Cloaker — убит",
+        lines: [
+          "Cloaker non-operational.",
+          "Cloaker message received.",
+          "Cloaker down.",
+          "Cloaker...*scrub*...is out of service.",
+          "*scrub* most people hate leg day!",
+          "BEGONE, DEMON! BEGONE!!",
+          "The veil is lifted."
+        ]
+      },
+      {
+        name: "Nader (газ)",
+        lines: [
+          "Nader.",
+          "Chemical weapons.",
+          "Avert your eyes.",
+          "The reaction is highly combustible.",
+          "I weep for them!"
+        ]
+      },
+      {
+        name: "Nader — убит",
+        lines: [
+          "Nader down.",
+          "Nader do...*scrub*...is out of service.",
+          "*scrub*...a blast from the past.",
+          "____, and the smoke is cleared away.",
+          "Smoking kills!"
+        ]
+      },
+      {
+        name: "Shield",
+        lines: [
+          "Shield.",
+          "Please use protection.",
+          "Their tough hides are nearly impenetrable.",
+          "Remember to block.",
+          "They think they're protected?!"
+        ]
+      },
+      {
+        name: "Shield — убит",
+        lines: [
+          "Shield out of service.",
+          "Shield disabled.",
+          "Shield down.",
+          "You cannot shield yourself!",
+          "No one is safe.",
+          "Even the toughest defense has its limits."
+        ]
+      },
+      {
+        name: "Sniper / Marksman",
+        lines: [
+          "Marksman.",
+          "Marksman, please assist.",
+          "Sniper.",
+          "The bald eagle can spot prey up to three miles.",
+          "Sniper killer."
+        ]
+      },
+      {
+        name: "Sniper — убит",
+        lines: [
+          "Marksman out of service.",
+          "Sniper down.",
+          "Sniper...*scrub*...is out of service.",
+          "*scrub* death from afar.",
+          "The killer *scrub* from afar.",
+          "You cannot hide from the supreme one!!!"
+        ]
+      },
+      {
+        name: "Medic / Techie",
+        lines: [
+          "Medical.",
+          "Doctor.",
+          "The doctor is in the house.",
+          "Techie.",
+          "Beware of _______. Please contact your IT department.",
+          "We cannot trust technology!!",
+          "The machine wars have begun.",
+          "This ________ cutting edge tech."
+        ]
+      },
+      {
+        name: "Medic / Techie — убит",
+        lines: [
+          "Doctor has been eliminated.",
+          "Medic is dead.",
+          "Techie down.",
+          "You are experiencing technical difficulties.",
+          "Put not your faith in gadgets!!",
+          "The robot apocalypse.",
+          "Techie...*scrub*...is out of service."
+        ]
+      },
+      {
+        name: "Taser / Zapper",
+        lines: [
+          "Taser.",
+          "Zapper.",
+          "Electrical hazard.",
+          "You're stunning!",
+          "A shocking new thriller.",
+          "They use electricity to stun their prey."
+        ]
+      },
+      {
+        name: "Taser / Zapper — убит",
+        lines: [
+          "Taser out of service.",
+          "Ci vediamo all'inferno.",
+          "Zapper down.",
+          "Zapper do...*scrub*...is out of service.",
+          "Do not be shocked!!",
+          "You can't just zap away the fat!",
+          "The shocking conclusion."
+        ]
+      }
+    ]
+  },
+  {
+    cat: "Ближний бой и Убийства",
+    sub: [
+      {
+        name: "Ближнее оружие",
+        lines: [
+          "El puñetazo que lanzó lo dejó inconsciente.",
+          "This bloodthirsty mutant vampire bat will leave a trail of broken bodies in its wake.",
+          "He's took down many and killed mighty kings!",
+          "The elephant crushes its enemies, with devastating results.",
+          "A fall can result in blunt force trauma to the head, and cause brain swelling.",
+          "🎵 *Scrub* ...-ddicted! The adrenaline rush! 🎵",
+          "🎵 *Scrub*...-cted to the CONCEPT OF US 🎵",
+          "🎵 I'm out of sync, self inflicted, but it fits like a glov-*scrub* 🎵"
+        ]
+      },
+      {
+        name: "После убийства",
+        lines: [
+          "You can thank me later.",
+          "I believe hoorays are in order.",
+          "Una testa di cazzo in meno.",
+          "I bought you a present.",
+          "Eat this.",
+          "The slaughter's mine!",
+          "Aortic work of art",
+          "'Cause even though it hurts, it's the thousandth time",
+          "I'm addicted, I'm addicted to the friction of....*scrub*",
+          "Or do you know that I'm obsessed with how it feels when we",
+          "Don't you find it all *sudden scrub* ROMANTIC *sudden scrub*",
+          "YOU...*scrub*HURT YOURSELF....*scrub* THERE.",
+          "\"It's time to take your final bow!\"",
+          "\"Such.. a shame...\" *scrub*\"That you're no longer part of the show!\""
+        ]
+      }
+    ]
+  },
+  {
+    cat: "Оружие, снаряжение и гаджеты",
+    sub: [
+      {
+        name: "OVERKILL / Подбирает оружие",
+        lines: [
+          "Heavy artillery required.",
+          "We're ready to fight!",
+          "The pack is stronger than ever.",
+          "Time for a CLEANSING FIRE!!!",
+          "Warning: This product may cause headaches, fits of rage, and testicular swelling.",
+          "🎵 *scrub*...-nd dance with me,what is there to lose? 🎵",
+          "\"THIS BEHAVIOR WILL BE NOTED IN YOUR PERFORMANCE REVIEW.\"",
+          "\"CONTINUED NONCOMPLIANCE MAY LEAD TO FUTURE WAGE DEDUCTIONS.\"",
+          "\"REMAIN WHERE YOU ARE.\"",
+          "You can thank me later.",
+          "I believe hoorays are in order.",
+          "Una testa di cazzo in meno.",
+          "I bought you a present.",
+          "Eat this.",
+          "The slaughter's mine!",
+          "Aortic work of art",
+          "'Cause even though it hurts, it's the thousandth time",
+          "I'm addicted, I'm addicted to the friction of....*scrub*",
+          "Or do you know that I'm obsessed with how it feels when we",
+          "Don't you find it all *sudden scrub* ROMANTIC *sudden scrub*",
+          "YOU...*scrub*HURT YOURSELF....*scrub* THERE.",
+          "\"It's time to take your final bow!\"",
+          "\"Such.. a shame...\" *scrub*\"That you're no longer part of the show!\""
+        ]
+      },
+      {
+        name: "Мало патронов",
+        lines: [
+          "Ammo reserves running low. Fill me up, please.",
+          "Cartridges almost depleted. I need ammo.",
+          "I need ammo.",
+          "Do you mind sharing?"
+        ]
+      },
+      {
+        name: "Дрель / бур",
+        lines: [
+          "Drill is securely fixed.",
+          "The drill is active - please stay clear of the moving parts.",
+          "Please call technical support.",
+          "In the event of hardware failure...",
+          "Software malfunction.",
+          "Due to unforeseen technical difficulties, your regularly scheduled programming has been canceled.",
+          "Batteries not included. Some assembly required."
+        ]
+      },
+      {
+        name: "Газ / дым / вспышка",
+        lines: [
+          "Tear gas is banned in most civilised nations.",
+          "Tear gas irritates the nose and eyes.",
+          "A sudden flash can damage your eyesight.",
+          "Would you mind smoking somewhere else?",
+          "Please smoke only in the designated areas.",
+          "Smoking is prohibited.",
+          "In the event of a sudden loss of cabin pressure, secure your own mask before assisting others."
+        ]
+      },
+      {
+        name: "Деплоаблы (Аптечка / патроны / броня)",
+        lines: [
+          "Ammo available.",
+          "Please, enjoy this complimentary ammo.",
+          "ARM YOURSELVES, WARRIORS!!",
+          "Bullets...will fly.",
+          "Additional cartridges are now available.",
+          "Ammunition has arrived.",
+          "Armor available.",
+          "The shell acts like a suit of armor.",
+          "My faith is my armor!!",
+          "Remember to protect yourself!",
+          "It's time...to armor up.",
+          "Medical supplies available.",
+          "Medical supplies have arrived.",
+          "First aid kit.",
+          "First aid kit available.",
+          "Medic bag available.",
+          "Always have the first aid kit on standby.",
+          "*rewind* -ho will come to their aid?"
+        ]
+      },
+      {
+        name: "Турель",
+        lines: [
+          "Deploying sentry.",
+          "Please, enjoy this automated sentry gun.",
+          "But this time, the robot is on our side.",
+          "BE MY SWORD!!! My weapon of TRUTH!!",
+          "Cyborg warriors from beyond the stars."
+        ]
+      },
+      {
+        name: "Зиплайн",
+        lines: [
+          "The zipline is ready.",
+          "An inclined cable, or rope.",
+          "Ziplines are a popular attraction.",
+          "Zip-*fast forward*-line!",
+          "Please proceed to the *scrub* zipline-",
+          "Zipline initiated."
+        ]
+      }
+    ]
+  },
+  {
+    cat: "Взаимодействие с NPC",
+    sub: [
+      {
+        name: "Мирные жители (угроза)",
+        lines: [
+          "Keep those arms outstretched!",
+          "Now into a kneeling position!",
+          "Let's get on the floor.",
+          "Please, remain calm.",
+          "Do not panic!",
+          "Thank you for holding.",
+          "You c — убит",
         lines: [
           "Bulldozer disabled.",
           "Bulldozer no longer in working order.",
