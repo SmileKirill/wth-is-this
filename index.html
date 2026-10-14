@@ -453,7 +453,10 @@ const GROUPS = [
           "YOU...*scrub*HURT YOURSELF....*scrub* THERE.",
           "\"It's time to take your final bow!\"",
           "\"Such.. a shame...\" *scrub*\"That you're no longer part of the show!\"",
-          "Your attempts are futile."
+          "🎵 救いの至福は長い間無関心でした 🎵",
+          "🎵 私の考えは幻滅しています 🎵",
+          "*HHHappy chiming* \"Congratulations! You wo-o-o-oo- (won)\"",
+          "\"New costume...\"*tape recorder noise*\"I love it!\""
         ]
       }
     ]
@@ -474,23 +477,16 @@ const GROUPS = [
           "\"CONTINUED NONCOMPLIANCE MAY LEAD TO FUTURE WAGE DEDUCTIONS.\"",
           "\"REMAIN WHERE YOU ARE.\"",
           "Fear not. I'm not trying to harm you.",
-          "There is no need to hide...*scrub*",
-          "I hear you breathing",
           "Your attempts are futile.",
-          "You can thank me later.",
-          "I believe hoorays are in order.",
-          "Una testa di cazzo in meno.",
-          "I bought you a present.",
-          "Eat this.",
-          "The slaughter's mine!",
-          "Aortic work of art",
-          "'Cause even though it hurts, it's the thousandth time",
-          "I'm addicted, I'm addicted to the friction of....*scrub*",
-          "Or do you know that I'm obsessed with how it feels when we",
-          "Don't you find it all *sudden scrub* ROMANTIC *sudden scrub*",
-          "YOU...*scrub*HURT YOURSELF....*scrub* THERE.",
-          "\"It's time to take your final bow!\"",
-          "\"Such.. a shame...\" *scrub*\"That you're no longer part of the show!\""
+          "🎵 The slaughter's mine! 🎵",
+          "🎵 Aortic work of art 🎵",
+          "🎵 'Cause even though it hurts, it's the thousandth time 🎵",
+          "🎵 I'm addicted, I'm addicted to the friction of....*scrub* 🎵",
+          "🎵 Or do you know that I'm obsessed with how it feels when we 🎵",
+          "🎵 Don't you find it all *sudden scrub* ROMANTIC *sudden scrub* 🎵",
+          "Okay, lets talk...",
+          "Let me get a look at the menagerie!",
+          "\"New costume...\"*tape recorder noise*\"I love it!\""
         ]
       },
       {
@@ -601,12 +597,10 @@ const GROUPS = [
           "Obedience is essential.",
           "DO YOU HAVE THE SLIGHTEST IDE-E-EA WHAT A MORAL AND ETHICAL PRINCIPAL IS? DO YOU?",
           "\"I DON'T LIKE IT...*scrub*...WHEN YOU WANDER OFF.\"",
-          "\"SWEETHEART, YOU’RE GOING TO CATCH A COLD HIDING LIKE THAT.\"",
+          "\"SWEETHEART, YOU’’RE GOING TO CATCH A COLD HIDING LIKE THAT.\"",
           "\"Struggle all you want. It only makes the hunt SWEETER\"",
           "\"You need to understand-\"*mechanic noise*\"-there's nothing to be afraid of.\"",
-          "\"You need to understand-\"*maniacal laugh in background static*\"-there's nothing to-\"*scrub*\"-be afraid of.\"",
-          "There is no need to hide...*scrub*",
-          "I hear you breathing"
+          "\"You need to understand-\"*maniacal laugh in background static*\"-there's nothing to-\"*scrub*\"-be afraid of.\""
         ]
       },
       {
@@ -645,7 +639,12 @@ const GROUPS = [
           "You don't have to struggle.",
           "JOIN me!!",
           "They're taking hostageeeees.",
-          "COME HERE, LET ME MAKE SURE YOU'RE OK."
+          "COME HERE, LET ME MAKE SURE YOU'RE OK.",
+          "\"CONTINUED NONCOMPLIANCE MAY LEAD TO FUTURE WAGE DEDUCTIONS.\"",
+          "\"REMAIN WHERE YOU ARE.\"",
+          "Fear not. I'm not trying to harm you.",
+          "There is no need to hide...*scrub*",
+          "I hear you breathing"
         ]
       }
     ]
@@ -1025,7 +1024,15 @@ const GROUPS = [
           "Mierda.",
           "Unfortunate.",
           "Swearing is not tolerated.",
-          "To hell with that!"
+          "To hell with that!",
+          "\"You've interrupted-\"*scrub*\"-the show.\"",
+          "\"THIS BEHAVIOR WILL BE NOTED IN YOUR PERFORMANCE REVIEW.\"",
+          "\"CONTINUED NONCOMPLIANCE MAY LEAD TO FUTURE WAGE DEDUCTIONS.\"",
+          "Stop swinging the bat...",
+          "*Audio glitches* \"You didn't let me finish my sentence...\"",
+          "*Scream* \"GOD DA-A-A-a-a-\"",
+          "\"Do you act-t-tu-ually think y-y-you can defe-e-e-ee-eat me?\" *Glitch*",
+          "*Bitcrushed buzzer* \"AHAHA, ARE YOU KIDDING? I HATE THIS STUPID JO-O-O-O-O-\" *Dial-up Connection Sound*"
         ]
       },
       {
@@ -1233,45 +1240,4 @@ function filterAll(query){
   const f = (query||'').trim().toLowerCase();
   let anyVisible = false;
 
-  document.querySelectorAll('.cat').forEach(catEl => {
-    let catHasMatch = false;
-    const quotesDirect = catEl.querySelectorAll('.catbody-inner > .quote');
-    quotesDirect.forEach(q => {
-      const match = !f || q.dataset.text.includes(f);
-      q.style.display = match ? '' : 'none';
-      if(match) catHasMatch = true;
-    });
-
-    catEl.querySelectorAll('.subcat').forEach(subEl => {
-      let subHasMatch = false;
-      subEl.querySelectorAll('.quote').forEach(q => {
-        const match = !f || q.dataset.text.includes(f);
-        q.style.display = match ? '' : 'none';
-        if(match) subHasMatch = true;
-      });
-      subEl.style.display = subHasMatch ? '' : 'none';
-      if(subHasMatch){
-        catHasMatch = true;
-        if(f){
-          subEl.classList.add('open');
-        }
-      }
-    });
-
-    catEl.style.display = catHasMatch ? '' : 'none';
-    if(catHasMatch){
-      anyVisible = true;
-      if(f){
-        catEl.classList.add('open');
-      }
-    }
-  });
-
-  emptyEl.style.display = anyVisible ? 'none' : 'block';
-}
-
-document.getElementById('search').addEventListener('input', (e)=> filterAll(e.target.value));
-</script>
-
-</body>
-</html>
+  document.querySelectorAll
