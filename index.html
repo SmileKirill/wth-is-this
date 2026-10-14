@@ -49,7 +49,7 @@
 
   .cat{
     border:1px solid var(--border); border-radius:8px;
-    margin-top:10px; overflow:hidden; background:var(--panel);
+    margin-top:10px; background:var(--panel);
   }
   .cat > .cathead{
     display:flex; align-items:center; justify-content:space-between;
@@ -64,41 +64,31 @@
     color:var(--muted); font-size:0.75rem; margin-left:8px; font-weight:normal;
   }
   .chevron{
-    color:var(--muted); font-size:0.8rem; transition:transform .25s; flex-shrink:0;
+    color:var(--muted); font-size:0.8rem; transition:transform .2s; flex-shrink:0;
   }
   .cat.open .chevron{ transform:rotate(90deg); }
 
-  /* CSS Grid Accordion technique */
-  .catbody-wrap, .subbody-wrap {
-    display: grid;
-    grid-template-rows: 0fr;
-    transition: grid-template-rows 0.25s ease;
-  }
-  .cat.open > .catbody-wrap,
-  .subcat.open > .subbody-wrap {
-    grid-template-rows: 1fr;
-  }
+  /* Bulletproof display toggle to prevent any text overlapping or clipping */
   .catbody, .subbody {
-    overflow: hidden;
-  }
-  .catbody-inner {
+    display: none;
     padding: 0 10px 10px;
   }
-  .subbody-inner {
-    padding-top: 6px;
+  .cat.open > .catbody,
+  .subcat.open > .subbody {
+    display: block;
   }
 
-  .subcat{ margin-top:8px; }
+  .subcat{ margin-top:8px; border:1px solid var(--border); border-radius:6px; background:var(--panel2); overflow:hidden; }
   .subcat > .subhead{
     display:flex; align-items:center; justify-content:space-between;
-    padding:8px 10px; cursor:pointer; background:var(--panel2);
-    border:1px solid var(--border); border-radius:6px; user-select:none;
+    padding:8px 10px; cursor:pointer; user-select:none;
   }
   .subcat > .subhead h3{
     margin:0; font-size:0.82rem; color:var(--text); font-weight:normal;
   }
-  .subcat .schevron{ color:var(--muted); font-size:0.75rem; transition:transform .25s; }
+  .subcat .schevron{ color:var(--muted); font-size:0.75rem; transition:transform .2s; }
   .subcat.open .schevron{ transform:rotate(90deg); }
+  .subbody { padding-top: 6px; }
 
   .quote{
     display:flex; align-items:flex-start; gap:10px;
@@ -597,7 +587,7 @@ const GROUPS = [
           "Obedience is essential.",
           "DO YOU HAVE THE SLIGHTEST IDE-E-EA WHAT A MORAL AND ETHICAL PRINCIPAL IS? DO YOU?",
           "\"I DON'T LIKE IT...*scrub*...WHEN YOU WANDER OFF.\"",
-          "\"SWEETHEART, YOU’’RE GOING TO CATCH A COLD HIDING LIKE THAT.\"",
+          "\"SWEETHEART, YOU’RE GOING TO CATCH A COLD HIDING LIKE THAT.\"",
           "\"Struggle all you want. It only makes the hunt SWEETER\"",
           "\"You need to understand-\"*mechanic noise*\"-there's nothing to be afraid of.\"",
           "\"You need to understand-\"*maniacal laugh in background static*\"-there's nothing to-\"*scrub*\"-be afraid of.\""
@@ -1167,17 +1157,10 @@ function buildSubcat(sub){
   head.appendChild(h3);
   head.appendChild(chev);
 
-  const wrap = document.createElement('div');
-  wrap.className = 'subbody-wrap';
-
   const body = document.createElement('div');
   body.className = 'subbody';
-  const inner = document.createElement('div');
-  inner.className = 'subbody-inner';
 
-  sub.lines.forEach(l => inner.appendChild(makeQuote(l)));
-  body.appendChild(inner);
-  wrap.appendChild(body);
+  sub.lines.forEach(l => body.appendChild(makeQuote(l)));
 
   head.addEventListener('click', (e) => {
     e.stopPropagation();
@@ -1185,7 +1168,7 @@ function buildSubcat(sub){
   });
 
   box.appendChild(head);
-  box.appendChild(wrap);
+  box.appendChild(body);
   return box;
 }
 
@@ -1206,30 +1189,22 @@ function buildCat(group){
   head.appendChild(h2);
   head.appendChild(chev);
 
-  const wrap = document.createElement('div');
-  wrap.className = 'catbody-wrap';
-
   const body = document.createElement('div');
   body.className = 'catbody';
-  const inner = document.createElement('div');
-  inner.className = 'catbody-inner';
 
   if(group.lines){
-    group.lines.forEach(l => inner.appendChild(makeQuote(l)));
+    group.lines.forEach(l => body.appendChild(makeQuote(l)));
   }
   if(group.sub){
-    group.sub.forEach(s => inner.appendChild(buildSubcat(s)));
+    group.sub.forEach(s => body.appendChild(buildSubcat(s)));
   }
-
-  body.appendChild(inner);
-  wrap.appendChild(body);
 
   head.addEventListener('click', () => {
     box.classList.toggle('open');
   });
 
   box.appendChild(head);
-  box.appendChild(wrap);
+  box.appendChild(body);
   return box;
 }
 
@@ -1240,4 +1215,45 @@ function filterAll(query){
   const f = (query||'').trim().toLowerCase();
   let anyVisible = false;
 
-  document.querySelectorAll
+  document.querySelectorAll('.cat').forEach(catEl => {
+    let catHasMatch = false;
+    const quotesDirect = catEl.querySelectorAll(':scope > .catbody > .quote');
+    quotesDirect.forEach(q => {
+      const match = !f || q.dataset.text.includes(f);
+      q.style.display = match ? '' : 'none';
+      if(match) catHasMatch = true;
+    });
+
+    catEl.querySelectorAll('.subcat').forEach(subEl => {
+      let subHasMatch = false;
+      subEl.querySelectorAll('.quote').forEach(q => {
+        const match = !f || q.dataset.text.includes(f);
+        q.style.display = match ? '' : 'none';
+        if(match) subHasMatch = true;
+      });
+      subEl.style.display = subHasMatch ? '' : 'none';
+      if(subHasMatch){
+        catHasMatch = true;
+        if(f){
+          subEl.classList.add('open');
+        }
+      }
+    });
+
+    catEl.style.display = catHasMatch ? '' : 'none';
+    if(catHasMatch){
+      anyVisible = true;
+      if(f){
+        catEl.classList.add('open');
+      }
+    }
+  });
+
+  emptyEl.style.display = anyVisible ? 'none' : 'block';
+}
+
+document.getElementById('search').addEventListener('input', (e)=> filterAll(e.target.value));
+</script>
+
+</body>
+</html>
